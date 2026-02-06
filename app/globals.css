@@ -1,0 +1,747 @@
+/* ================================================
+   MEDICAL TOURISM WEBSITE - VISUAL POLISH v2.0
+   ================================================
+   
+   TYPOGRAPHY:
+   - Primary Font: 'Plus Jakarta Sans' (Modern, Professional, Medical-friendly)
+   - Secondary Font: 'Inter' (Clean, Readable for body text)
+   
+   IMPROVEMENTS:
+   - Enhanced font hierarchy and readability
+   - Better spacing and breathing room
+   - Refined color palette with better contrast
+   - Improved button and card styling
+   - Professional image alignment
+   - Mobile-optimized typography
+   ================================================ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Primary Brand Blue (KEEP – refined) */
+  --primary-color: #0891b2;      /* Medical blue */
+  --primary-dark: #0e7490;       /* Hover / emphasis */
+
+  /* Secondary & Accent (less cyan, more premium) */
+  --secondary-color: #2563eb;    /* Calm blue accent (buttons/links) */
+  --accent-color: #38bdf8;       /* Soft sky highlight (icons) */
+
+  /* Backgrounds */
+  --background-color: #f9fafb;   /* Softer than slate */
+  --surface-color: #ffffff;
+
+  /* Text */
+  --text-color: #1f2937;         /* Dark gray (less harsh than slate 900) */
+  --text-secondary: #6b7280;     /* Balanced readability */
+  --text-muted: #9ca3af;
+
+  /* Borders & Dividers */
+  --light-gray: #e5e7eb;
+
+  /* Status Colors (unchanged – already perfect) */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing System - More consistent */
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 1rem;
+  /* 16px */
+  --spacing-md: 1.5rem;
+  /* 24px */
+  --spacing-lg: 2rem;
+  /* 32px */
+  --spacing-xl: 3rem;
+  /* 48px */
+  --spacing-2xl: 4rem;
+  /* 64px */
+  --spacing-3xl: 6rem;
+  /* 96px */
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+  --border-radius: 12px;
+  /* Increased for modern look */
+  --border-radius-sm: 8px;
+  --border-radius-lg: 16px;
+
+  /* Shadows - More refined */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+}
+
+/* ================================================
+   BASE STYLES
+   ================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  /* Improved readability */
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================================
+   TYPOGRAPHY - Enhanced Hierarchy
+   ================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+  /* Tighter tracking for headings */
+}
+
+h1 {
+  font-size: 3.5rem;
+  /* 56px */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  /* 40px */
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: 1.75rem;
+  /* 28px */
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.125rem;
+  /* 18px */
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ================================================
+   LAYOUT UTILITIES
+   ================================================ */
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section {
+  padding: var(--spacing-3xl) 0;
+  /* 96px top/bottom */
+}
+
+/* ================================================
+   BUTTONS - Enhanced Styling
+   ================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: 1rem 2rem;
+  /* Larger, easier to tap */
+  border-radius: var(--border-radius);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 48px;
+  /* Better mobile tap target */
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: white;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ================================================
+   CARDS - Improved Design
+   ================================================ */
+
+.shadow-card {
+  background: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--light-gray);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shadow-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+/* ================================================
+   BACKGROUND UTILITIES
+   ================================================ */
+
+.bg-white {
+  background-color: var(--surface-color);
+}
+
+.bg-light {
+  background-color: var(--background-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ================================================
+   TEXT UTILITIES
+   ================================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-white {
+  color: white;
+}
+
+/* ================================================
+   FLEXBOX & GRID
+   ================================================ */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: var(--spacing-xs);
+}
+
+.gap-4 {
+  gap: var(--spacing-sm);
+}
+
+.gap-8 {
+  gap: var(--spacing-lg);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  /* Increased from 2rem for better breathing */
+}
+
+/* Grid Defaults (Mobile First) */
+.grid-2,
+.grid-3,
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+/* ================================================
+   NAVIGATION - Polished
+   ================================================ */
+
+.navbar {
+  height: var(--header-height);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--text-color);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ================================================
+   IMAGE STYLING - Better Alignment
+   ================================================ */
+
+.hero-image,
+.section-image {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Ensure consistent aspect ratios */
+.card-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-xl {
+  border-radius: var(--border-radius-lg);
+}
+
+.rounded-lg {
+  border-radius: var(--border-radius);
+}
+
+/* Background helpers */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bg-blue-50 {
+  background-color: #f0f9ff;
+}
+
+.bg-blue-100 {
+  background-color: #e0f2fe;
+}
+
+.text-blue-100 {
+  color: #e0f2fe;
+}
+
+.text-success-color {
+  color: var(--success-color);
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* ================================================
+   MOBILE RESPONSIVE - Enhanced
+   ================================================ */
+
+@media (max-width: 768px) {
+
+  /* Typography adjustments */
+  h1 {
+    font-size: 2.5rem;
+    /* 40px */
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 2rem;
+    /* 32px */
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    /* 24px */
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    /* 18px */
+  }
+
+  /* Spacing adjustments */
+  .section {
+    padding: var(--spacing-2xl) 0;
+    /* 64px on mobile */
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+    /* Tighter on mobile */
+  }
+
+  /* Button adjustments */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Grid spacing */
+  .grid {
+    gap: var(--spacing-md);
+  }
+
+  /* Card padding */
+  .shadow-card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ================================================
+   TABLET & DESKTOP
+   ================================================ */
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex !important;
+  }
+
+  .md\:hidden {
+    display: none !important;
+  }
+
+  .md\:block {
+    display: block !important;
+  }
+
+  /* Responsive Widths */
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-1\/4 {
+    width: 25%;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
+  .md\:w-2\/5 {
+    width: 40%;
+  }
+
+  .md\:w-3\/5 {
+    width: 60%;
+  }
+
+  /* Spacing Utilities */
+  .md\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .md\:my-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Grid layouts */
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Large screens - prevent excessive line length */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* ================================================
+   ACCESSIBILITY & POLISH
+   ================================================ */
+
+/* Focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Better text rendering */
+body {
+  text-rendering: optimizeLegibility;
+}
+
+/* ================================================
+   DOCTORS FILTER UI FIX
+   ================================================ */
+
+.filter-card {
+  background: var(--surface-color);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .filter-group {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Search Input with Icon */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-wrapper svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px 0 44px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-gray);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--surface-color);
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+}
+
+/* Select */
+.filter-select {
+  width: 100%;
+  height: 52px;
+  padding: 0 14px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-gray);
+  background: var(--surface-color);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+}
